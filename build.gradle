@@ -1,0 +1,29 @@
+group 'com.lrlz'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.1.2'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    maven {
+        url  "https://dl.bintray.com/kotlin/exposed"
+    }
+    compile 'org.jetbrains.exposed:exposed:0.10.1'
+    compile 'org.jsoup:jsoup:1.11.2'
+    compile ("mysql:mysql-connector-java-5.1.46-bin")
+}
